@@ -197,8 +197,7 @@ h2.title{
 .photo{
   height:220px;
   border-radius:20px;
-  background:
-    linear-gradient(135deg,#d9c5b0,#8e7560);
+  background:linear-gradient(135deg,#d9c5b0,#8e7560);
   display:flex;
   align-items:center;
   justify-content:center;
@@ -291,11 +290,10 @@ footer h2{
 
 <body>
 
-<!-- COVER -->
 <section class="cover" id="home">
   <div class="cover-content">
     <div class="small">The Wedding Of</div>
-    <h1>Raka & Ega</h1>
+    <h1>Sije & Ega</h1>
     <h2>13 • 09 • 2026</h2>
     <div class="date">Kepada Yth. Bapak/Ibu/Saudara/i</div>
     <button class="open-btn" onclick="openInvitation()">
@@ -306,7 +304,6 @@ footer h2{
 
 <main id="invitation">
 
-<!-- INTRO -->
 <section class="intro fade">
   <div class="container">
     <div class="small">Assalamu'alaikum Wr. Wb.</div>
@@ -319,11 +316,10 @@ footer h2{
   </div>
 </section>
 
-<!-- NAMA -->
 <section class="names fade">
   <div class="container">
     <div class="small">Mempelai</div>
-    <h3>Raka</h3>
+    <h3>Sije</h3>
     <p>Putra dari Bapak Nama Ayah & Ibu Nama Ibu</p>
 
     <div class="amp">&</div>
@@ -333,7 +329,6 @@ footer h2{
   </div>
 </section>
 
-<!-- COUNTDOWN -->
 <section class="fade">
   <div class="container">
     <h2 class="title">Menuju Hari Bahagia</h2>
@@ -348,7 +343,6 @@ footer h2{
   </div>
 </section>
 
-<!-- ACARA -->
 <section class="fade">
   <div class="container">
     <h2 class="title">Waktu & Tempat</h2>
@@ -385,13 +379,13 @@ footer h2{
   </div>
 </section>
 
-<!-- STORY -->
 <section class="fade">
   <div class="container">
     <h2 class="title">Our Story</h2>
     <p class="subtitle">Sebuah perjalanan kecil menuju cerita selamanya.</p>
 
     <div class="timeline">
+
       <div class="story">
         <h3>Awal Bertemu</h3>
         <p>
@@ -417,11 +411,11 @@ footer h2{
           ke jenjang kehidupan berikutnya.
         </p>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- GALERI -->
 <section class="fade">
   <div class="container">
     <h2 class="title">Our Moments</h2>
@@ -440,7 +434,6 @@ footer h2{
   </div>
 </section>
 
-<!-- RSVP -->
 <section class="fade">
   <div class="container">
     <h2 class="title">RSVP</h2>
@@ -449,6 +442,7 @@ footer h2{
     </p>
 
     <div class="card rsvp">
+
       <input id="guestName" placeholder="Nama Anda">
 
       <select id="attendance">
@@ -458,19 +452,20 @@ footer h2{
       </select>
 
       <textarea id="message"
-      placeholder="Tulis ucapan untuk Raka & Ega"></textarea>
+      placeholder="Tulis ucapan untuk Sije & Ega"></textarea>
 
       <button class="submit" onclick="sendRSVP()">
         Kirim Konfirmasi
       </button>
+
     </div>
   </div>
 </section>
 
-<!-- PENUTUP -->
 <section class="intro fade">
   <div class="container">
     <div class="small">Terima Kasih</div>
+
     <p class="quote">
       Merupakan suatu kehormatan dan kebahagiaan
       bagi kami apabila Bapak/Ibu/Saudara/i
@@ -478,16 +473,18 @@ footer h2{
     </p>
 
     <div class="names">
-      <h3>Raka & Ega</h3>
+      <h3>Sije & Ega</h3>
     </div>
+
   </div>
 </section>
 
 </main>
 
 <footer>
-  <h2>Raka & Ega</h2>
+  <h2>Sije & Ega</h2>
   <p>Made with love ♡</p>
+
   <p style="margin-top:15px;font-size:12px;opacity:.6">
     EGA Digital Invitation
   </p>
@@ -496,7 +493,6 @@ footer h2{
 <button class="music" onclick="toggleMusic()" id="musicBtn">♫</button>
 
 <audio id="music" loop>
-  <!-- NANTI BISA MASUKKAN LINK MP3 -->
 </audio>
 
 <script>
@@ -507,18 +503,24 @@ function openInvitation(){
   });
 }
 
+
 /* COUNTDOWN */
-const weddingDate = new Date("September 13, 2026 09:00:00").getTime();
+
+const weddingDate =
+new Date("September 13, 2026 09:00:00").getTime();
 
 setInterval(function(){
+
   const now = new Date().getTime();
   const distance = weddingDate - now;
 
   if(distance <= 0){
+
     document.getElementById("days").innerText=0;
     document.getElementById("hours").innerText=0;
     document.getElementById("minutes").innerText=0;
     document.getElementById("seconds").innerText=0;
+
     return;
   }
 
@@ -526,32 +528,48 @@ setInterval(function(){
     Math.floor(distance/(1000*60*60*24));
 
   document.getElementById("hours").innerText =
-    Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+    Math.floor(
+      (distance%(1000*60*60*24))/(1000*60*60)
+    );
 
   document.getElementById("minutes").innerText =
-    Math.floor((distance%(1000*60*60))/(1000*60));
+    Math.floor(
+      (distance%(1000*60*60))/(1000*60)
+    );
 
   document.getElementById("seconds").innerText =
-    Math.floor((distance%(1000*60))/1000);
+    Math.floor(
+      (distance%(1000*60))/1000
+    );
 
 },1000);
 
 
-/* ANIMASI SAAT SCROLL */
-const observer = new IntersectionObserver(entries=>{
+/* ANIMASI SCROLL */
+
+const observer =
+new IntersectionObserver(entries=>{
+
   entries.forEach(entry=>{
+
     if(entry.isIntersecting){
       entry.target.classList.add("show");
     }
+
   });
+
 },{threshold:.12});
 
-document.querySelectorAll(".fade").forEach(el=>{
+
+document
+.querySelectorAll(".fade")
+.forEach(el=>{
   observer.observe(el);
 });
 
 
 /* RSVP WHATSAPP */
+
 function sendRSVP(){
 
   const name =
@@ -564,12 +582,16 @@ function sendRSVP(){
     document.getElementById("message").value;
 
   if(!name || !attendance){
-    alert("Mohon isi nama dan konfirmasi kehadiran.");
+
+    alert(
+      "Mohon isi nama dan konfirmasi kehadiran."
+    );
+
     return;
   }
 
   const text =
-`Halo Raka & Ega 👋
+`Halo Sije & Ega 👋
 
 Nama: ${name}
 Kehadiran: ${attendance}
@@ -577,11 +599,8 @@ Kehadiran: ${attendance}
 Ucapan:
 ${message}`;
 
-  /*
-    GANTI NOMOR INI DENGAN NOMOR WHATSAPP
-    PEMILIK UNDANGAN.
-  */
-  const phone = "6281234567890";
+  const phone =
+    "6281234567890";
 
   window.open(
     "https://wa.me/"+phone+
@@ -592,19 +611,27 @@ ${message}`;
 
 
 /* MUSIC */
+
 let playing=false;
 
 function toggleMusic(){
 
-  const music=document.getElementById("music");
-  const btn=document.getElementById("musicBtn");
+  const music =
+    document.getElementById("music");
+
+  const btn =
+    document.getElementById("musicBtn");
 
   if(playing){
+
     music.pause();
     btn.innerText="♫";
+
   }else{
+
     music.play().catch(()=>{});
     btn.innerText="⏸";
+
   }
 
   playing=!playing;
