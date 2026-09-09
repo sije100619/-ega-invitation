@@ -1,311 +1,603 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#f6f3ee">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<meta
+    name="theme-color"
+    content="#f6f4f0">
 
 <title>EGA Business Manager</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
+
+/* =====================================================
+   EGA BUSINESS MANAGER
+   PREMIUM V4
+===================================================== */
 
 :root{
+
     --bg:#f6f4f0;
+
     --surface:#ffffff;
-    --surface-soft:#faf9f6;
-    --ink:#25231f;
+
+    --soft:#faf9f6;
+
+    --ink:#282620;
+
     --muted:#77736b;
-    --light:#a39d93;
-    --line:#e8e3da;
+
+    --light:#a7a198;
+
+    --line:#e7e2d9;
 
     --gold:#9a6b32;
-    --gold-light:#f3e8d5;
 
-    --green:#39765a;
-    --green-light:#eaf4ee;
+    --gold-soft:#f2e5d2;
 
-    --red:#b65348;
-    --red-light:#fbeeed;
+    --green:#39775a;
 
-    --blue:#527499;
-    --blue-light:#edf3f8;
+    --green-soft:#eaf4ee;
 
-    --shadow:0 12px 35px rgba(45,38,29,.06);
+    --red:#b55348;
+
+    --red-soft:#faece9;
+
+    --blue:#55779b;
+
+    --blue-soft:#edf3f8;
+
+    --shadow:
+        0 14px 40px rgba(45,38,29,.065);
+
 }
+
+
+/* RESET */
 
 *{
     box-sizing:border-box;
 }
 
+
 html{
     scroll-behavior:smooth;
 }
 
+
 body{
+
     margin:0;
+
     background:var(--bg);
+
     color:var(--ink);
-    font-family:"DM Sans",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+
+    font-family:
+        "DM Sans",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
 }
+
 
 button,
 input,
 select{
+
     font-family:inherit;
+
 }
+
+
+/* APP */
 
 .app{
+
     width:100%;
+
     max-width:1180px;
+
     margin:auto;
-    padding:24px 18px 60px;
+
+    padding:
+        22px
+        18px
+        60px;
+
 }
 
-/* ================= HEADER ================= */
+
+/* =====================================================
+   HEADER
+===================================================== */
 
 .header{
+
     display:flex;
-    align-items:center;
+
     justify-content:space-between;
+
+    align-items:center;
+
     gap:20px;
-    margin-bottom:22px;
+
+    margin-bottom:20px;
+
 }
+
 
 .brand{
+
     display:flex;
+
     align-items:center;
+
     gap:14px;
+
 }
+
 
 .logo{
+
     width:54px;
+
     height:54px;
-    border-radius:17px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
-    background:#27251f;
-    color:#f5e8d5;
+    border-radius:17px;
 
-    font-family:"Manrope",sans-serif;
+    background:var(--ink);
+
+    color:#f5e9d7;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
     font-size:23px;
+
     font-weight:800;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.08);
+
 }
+
 
 .eyebrow{
-    color:var(--gold);
-    font-size:10px;
-    font-weight:800;
-    letter-spacing:3px;
+
     margin-bottom:3px;
+
+    color:var(--gold);
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
 }
+
 
 h1{
+
     margin:0;
 
-    font-family:"Manrope",sans-serif;
-    font-size:clamp(28px,5vw,40px);
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size:
+        clamp(28px,5vw,40px);
+
     font-weight:800;
+
     letter-spacing:-1.5px;
+
 }
+
 
 .subtitle{
+
     margin-top:4px;
+
     color:var(--muted);
+
     font-size:13px;
+
 }
+
 
 .business-box{
-    background:var(--surface);
-    border:1px solid var(--line);
+
+    min-width:160px;
+
+    padding:11px 14px;
+
+    border:
+        1px solid var(--line);
+
     border-radius:14px;
-    padding:10px 14px;
-    min-width:145px;
+
+    background:var(--surface);
+
 }
+
 
 .business-label{
+
     color:var(--light);
+
     font-size:9px;
-    letter-spacing:1px;
+
     font-weight:700;
+
+    letter-spacing:1px;
+
 }
+
 
 .business-name{
+
     margin-top:3px;
-    color:var(--ink);
+
     font-size:12px;
+
     font-weight:700;
+
 }
 
-/* ================= NAV ================= */
+
+/* =====================================================
+   NAV
+===================================================== */
 
 .nav-wrap{
+
     position:sticky;
+
     top:0;
+
     z-index:20;
 
-    padding:3px 0 15px;
+    padding:
+        3px
+        0
+        15px;
 
-    background:rgba(246,244,240,.94);
-    backdrop-filter:blur(14px);
+    background:
+        rgba(246,244,240,.94);
+
+    backdrop-filter:
+        blur(14px);
+
 }
+
 
 .nav{
+
     display:flex;
+
     gap:7px;
+
     overflow-x:auto;
+
     scrollbar-width:none;
+
 }
+
 
 .nav::-webkit-scrollbar{
     display:none;
 }
 
+
 .nav button{
+
     flex:0 0 auto;
 
-    padding:10px 15px;
+    padding:
+        10px
+        15px;
 
-    border:1px solid var(--line);
+    border:
+        1px solid var(--line);
+
     border-radius:12px;
 
-    background:var(--surface);
+    background:
+        var(--surface);
+
     color:var(--muted);
 
     font-size:11px;
+
     font-weight:700;
 
     cursor:pointer;
+
     transition:.2s;
+
 }
 
-.nav button:hover{
-    border-color:#cfc5b6;
-}
 
 .nav button.active{
+
     background:var(--ink);
+
     border-color:var(--ink);
+
     color:#fff;
+
 }
 
-/* ================= GENERAL ================= */
 
-section{
-    animation:fadeIn .25s ease;
-}
-
-@keyframes fadeIn{
-    from{
-        opacity:.4;
-        transform:translateY(4px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
+/* =====================================================
+   SECTIONS
+===================================================== */
 
 .hidden{
     display:none!important;
 }
 
+
+section{
+
+    animation:
+        fadeIn
+        .25s
+        ease;
+
+}
+
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:.5;
+
+        transform:
+            translateY(5px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   CARDS
+===================================================== */
+
 .card{
-    background:var(--surface);
-    border:1px solid var(--line);
-    border-radius:20px;
+
     padding:19px;
 
-    box-shadow:var(--shadow);
+    border:
+        1px solid var(--line);
+
+    border-radius:20px;
+
+    background:
+        var(--surface);
+
+    box-shadow:
+        var(--shadow);
+
 }
+
 
 .section{
     margin-top:14px;
 }
 
+
 .section-title{
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
 
+    gap:10px;
+
     margin-bottom:14px;
+
 }
+
 
 .section-title h2{
+
     margin:0;
 
-    font-family:"Manrope",sans-serif;
+    font-family:
+        "Manrope",
+        sans-serif;
+
     font-size:16px;
+
     font-weight:700;
+
 }
+
 
 .section-title span{
+
     color:var(--muted);
+
     font-size:10px;
+
 }
 
-/* ================= STATS ================= */
+
+/* =====================================================
+   GREETING
+===================================================== */
+
+.greeting{
+
+    margin-bottom:14px;
+
+}
+
+
+.greeting-small{
+
+    color:var(--muted);
+
+    font-size:11px;
+
+}
+
+
+.greeting h2{
+
+    margin:
+        3px
+        0
+        0;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size:23px;
+
+    letter-spacing:-.5px;
+
+}
+
+
+.greeting h2 span{
+    color:var(--gold);
+}
+
+
+/* =====================================================
+   STATISTICS
+===================================================== */
 
 .stats{
+
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:
+        repeat(4,1fr);
+
     gap:12px;
+
 }
 
-.stat-card{
-    min-height:130px;
+
+.stat{
+
     position:relative;
+
+    min-height:132px;
+
     overflow:hidden;
+
 }
 
-.stat-card::after{
+
+.stat::after{
+
     content:"";
+
     position:absolute;
 
     right:-35px;
+
     bottom:-45px;
 
-    width:110px;
-    height:110px;
+    width:115px;
+
+    height:115px;
 
     border-radius:50%;
 
-    background:var(--gold-light);
+    background:
+        var(--gold-soft);
+
     opacity:.45;
+
 }
 
+
 .stat-label{
+
     color:var(--muted);
 
     font-size:9px;
+
     font-weight:700;
 
     letter-spacing:1.2px;
+
     text-transform:uppercase;
+
 }
 
+
 .stat-value{
+
+    position:relative;
+
+    z-index:1;
+
     margin-top:10px;
 
-    font-family:"Manrope",sans-serif;
+    font-family:
+        "Manrope",
+        sans-serif;
+
     font-size:25px;
+
     font-weight:800;
 
     letter-spacing:-.7px;
+
 }
 
+
 .stat-note{
+
+    position:relative;
+
+    z-index:1;
+
     margin-top:6px;
 
     color:var(--light);
+
     font-size:10px;
+
 }
+
 
 .gold{
     color:var(--gold);
@@ -323,327 +615,747 @@ section{
     color:var(--blue);
 }
 
-/* ================= TWO COLUMN ================= */
+
+/* =====================================================
+   TWO COLUMN
+===================================================== */
 
 .two-column{
+
     display:grid;
-    grid-template-columns:1.25fr .75fr;
+
+    grid-template-columns:
+        1.25fr
+        .75fr;
+
     gap:14px;
+
 }
 
-/* ================= MONEY ================= */
+
+/* =====================================================
+   MONEY
+===================================================== */
 
 .money-grid{
+
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:
+        repeat(4,1fr);
+
     gap:9px;
+
 }
+
 
 .money-item{
-    background:var(--surface-soft);
-    border:1px solid var(--line);
-    border-radius:14px;
 
     padding:14px;
+
+    border:
+        1px solid var(--line);
+
+    border-radius:14px;
+
+    background:
+        var(--soft);
+
 }
 
+
 .money-label{
+
     color:var(--muted);
 
     font-size:9px;
+
     letter-spacing:1px;
+
     text-transform:uppercase;
+
 }
+
 
 .money-value{
+
     margin-top:6px;
 
-    font-family:"Manrope",sans-serif;
+    font-family:
+        "Manrope",
+        sans-serif;
+
     font-size:16px;
+
     font-weight:700;
+
 }
 
-/* ================= TARGET ================= */
 
-.target-number{
+/* =====================================================
+   TARGET
+===================================================== */
+
+.target-input{
+
     width:100%;
 
     padding:12px;
 
-    border:1px solid var(--line);
+    border:
+        1px solid var(--line);
+
     border-radius:11px;
 
     background:#fff;
+
     color:var(--ink);
 
     font-size:12px;
+
     outline:none;
+
 }
 
-.target-number:focus{
-    border-color:#c6a16e;
-    box-shadow:0 0 0 3px rgba(154,107,50,.08);
+
+.target-input:focus{
+
+    border-color:#c5a16e;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(154,107,50,.08);
+
 }
+
 
 .progress{
+
     height:7px;
 
-    margin-top:13px;
+    margin-top:12px;
 
     overflow:hidden;
 
     border-radius:99px;
 
     background:#ece8e1;
+
 }
 
+
 .progress-bar{
+
     width:0;
+
     height:100%;
 
     border-radius:99px;
 
     background:var(--gold);
 
-    transition:.35s;
+    transition:.4s;
+
 }
 
-/* ================= BANNER ================= */
 
-.business-banner{
+/* =====================================================
+   CHART
+===================================================== */
+
+.chart{
+
+    height:190px;
+
     display:flex;
+
+    align-items:flex-end;
+
+    gap:8px;
+
+    padding:
+        15px
+        8px
+        4px;
+
+}
+
+
+.chart-column{
+
+    flex:1;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
     align-items:center;
+
+    gap:5px;
+
+}
+
+
+.chart-bar{
+
+    width:100%;
+
+    max-width:42px;
+
+    min-height:3px;
+
+    border-radius:
+        7px
+        7px
+        3px
+        3px;
+
+    background:
+        linear-gradient(
+            to top,
+            #9a6b32,
+            #c99a58
+        );
+
+    transition:.4s;
+
+}
+
+
+.chart-label{
+
+    color:var(--light);
+
+    font-size:9px;
+
+}
+
+
+.chart-value{
+
+    color:var(--muted);
+
+    font-size:8px;
+
+}
+
+
+/* =====================================================
+   BUSINESS ALLOCATION
+===================================================== */
+
+.allocation{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:9px;
+
+}
+
+
+.allocation-item{
+
+    padding:14px;
+
+    border-radius:14px;
+
+    border:
+        1px solid var(--line);
+
+    background:
+        var(--soft);
+
+}
+
+
+.allocation-item strong{
+
+    display:block;
+
+    margin-top:5px;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size:16px;
+
+}
+
+
+.allocation-item small{
+
+    color:var(--muted);
+
+    font-size:9px;
+
+}
+
+
+/* =====================================================
+   PRODUCT INSIGHT
+===================================================== */
+
+.insight-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap:14px;
+
+}
+
+
+.insight-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+
+.insight-row{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    padding:12px;
+
+    border:
+        1px solid var(--line);
+
+    border-radius:13px;
+
+    background:
+        var(--soft);
+
+}
+
+
+.insight-name{
+
+    font-size:11px;
+
+    font-weight:700;
+
+}
+
+
+.insight-meta{
+
+    margin-top:3px;
+
+    color:var(--muted);
+
+    font-size:9px;
+
+}
+
+
+.badge{
+
+    padding:5px 8px;
+
+    border-radius:8px;
+
+    background:var(--gold-soft);
+
+    color:#7d5727;
+
+    font-size:9px;
+
+    font-weight:700;
+
+}
+
+
+.badge.low{
+
+    background:var(--red-soft);
+
+    color:var(--red);
+
+}
+
+
+/* =====================================================
+   BANNER
+===================================================== */
+
+.banner{
+
+    display:flex;
+
+    align-items:center;
+
     gap:13px;
 
     padding:16px 18px;
 
-    background:var(--ink);
     border-radius:17px;
 
-    color:white;
+    background:var(--ink);
+
+    color:#fff;
+
 }
 
+
 .banner-icon{
+
     width:38px;
+
     height:38px;
 
     display:grid;
+
     place-items:center;
 
     border-radius:12px;
 
-    background:rgba(255,255,255,.1);
+    background:
+        rgba(255,255,255,.1);
+
 }
+
 
 .banner-title{
-    font-family:"Manrope",sans-serif;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
     font-size:13px;
+
     font-weight:700;
+
 }
+
 
 .banner-text{
+
     margin-top:2px;
 
-    color:#d1cec7;
+    color:#d2cec6;
+
     font-size:10px;
+
 }
 
-/* ================= FORMS ================= */
+
+/* =====================================================
+   FORMS
+===================================================== */
 
 .form-grid{
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap:10px;
+
 }
 
+
 .field label{
+
     display:block;
 
     margin-bottom:6px;
 
     color:var(--muted);
+
     font-size:10px;
+
     font-weight:600;
+
 }
+
 
 .field input,
 .field select{
+
     width:100%;
 
-    padding:11px 12px;
+    padding:
+        11px
+        12px;
 
-    border:1px solid var(--line);
+    border:
+        1px solid var(--line);
+
     border-radius:11px;
 
     background:#fff;
+
     color:var(--ink);
 
     font-size:12px;
 
     outline:none;
+
 }
 
-.field input::placeholder{
-    color:#aaa49b;
-}
 
 .field input:focus,
 .field select:focus{
-    border-color:#c6a16e;
+
+    border-color:#c5a16e;
 
     box-shadow:
-        0 0 0 3px rgba(154,107,50,.08);
+        0 0 0 3px
+        rgba(154,107,50,.08);
+
 }
 
-/* ================= BUTTON ================= */
+
+/* =====================================================
+   BUTTON
+===================================================== */
 
 .btn{
+
+    padding:
+        11px
+        16px;
+
     border:0;
+
     border-radius:11px;
 
-    padding:11px 16px;
-
     background:var(--ink);
+
     color:#fff;
 
     font-size:11px;
+
     font-weight:700;
 
     cursor:pointer;
 
-    transition:.2s;
 }
 
-.btn:hover{
-    transform:translateY(-1px);
-}
 
 .btn-soft{
-    background:var(--gold-light);
-    color:#75501f;
 
-    border:1px solid #ead8bd;
+    background:
+        var(--gold-soft);
+
+    color:#76501f;
+
+    border:
+        1px solid #ead8bd;
+
 }
+
 
 .btn-danger{
-    background:var(--red-light);
+
+    background:
+        var(--red-soft);
+
     color:var(--red);
 
-    border:1px solid #efd2cd;
+    border:
+        1px solid #efd1cb;
+
 }
 
-/* ================= TABLE ================= */
+
+/* =====================================================
+   TABLE
+===================================================== */
 
 .table-wrap{
+
     overflow:auto;
 
-    border:1px solid var(--line);
+    border:
+        1px solid var(--line);
+
     border-radius:14px;
+
 }
 
+
 table{
+
     width:100%;
+
     min-width:720px;
 
     border-collapse:collapse;
+
 }
+
 
 th,
 td{
-    padding:12px;
+
+    padding:
+        12px;
 
     text-align:left;
 
-    border-bottom:1px solid #eeeae4;
+    border-bottom:
+        1px solid #eeeae4;
 
     font-size:11px;
+
 }
 
+
 th{
+
     background:#faf9f7;
 
     color:var(--muted);
 
     font-size:9px;
-    font-weight:700;
 
     letter-spacing:1px;
+
     text-transform:uppercase;
+
 }
+
 
 tr:last-child td{
     border-bottom:0;
 }
 
+
 .empty{
+
     padding:30px;
 
     text-align:center;
 
     color:var(--muted);
+
 }
 
-/* ================= REPORT ================= */
+
+/* =====================================================
+   REPORT
+===================================================== */
 
 .report-grid{
+
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:
+        repeat(4,1fr);
+
     gap:9px;
+
 }
+
 
 .report-item{
+
     padding:15px;
 
-    background:var(--surface-soft);
+    border:
+        1px solid var(--line);
 
-    border:1px solid var(--line);
     border-radius:14px;
+
+    background:
+        var(--soft);
+
 }
 
+
 .report-item b{
+
     display:block;
 
     margin-top:6px;
 
-    font-family:"Manrope",sans-serif;
+    font-family:
+        "Manrope",
+        sans-serif;
+
     font-size:17px;
+
 }
 
-/* ================= TOAST ================= */
+
+/* =====================================================
+   TOAST
+===================================================== */
 
 .toast{
+
     position:fixed;
 
     left:50%;
+
     bottom:20px;
 
     z-index:100;
 
-    padding:11px 16px;
-
-    background:var(--ink);
-    color:#fff;
+    padding:
+        11px
+        16px;
 
     border-radius:11px;
+
+    background:var(--ink);
+
+    color:#fff;
 
     font-size:11px;
 
     opacity:0;
-    transform:translate(-50%,20px);
+
+    transform:
+        translate(-50%,20px);
 
     pointer-events:none;
 
     transition:.25s;
+
 }
+
 
 .toast.show{
+
     opacity:1;
-    transform:translate(-50%,0);
+
+    transform:
+        translate(-50%,0);
+
 }
 
-/* ================= FOOTER ================= */
+
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer{
+
     margin-top:28px;
 
     text-align:center;
@@ -651,75 +1363,143 @@ footer{
     color:#aaa49b;
 
     font-size:10px;
+
 }
 
-/* ================= RESPONSIVE ================= */
 
-@media(max-width:900px){
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:950px){
 
     .stats{
-        grid-template-columns:repeat(2,1fr);
+
+        grid-template-columns:
+            repeat(2,1fr);
+
     }
 
     .money-grid{
-        grid-template-columns:repeat(2,1fr);
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+    .allocation{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
     }
 
     .report-grid{
-        grid-template-columns:repeat(2,1fr);
+
+        grid-template-columns:
+            repeat(2,1fr);
+
     }
 
     .two-column{
+
         grid-template-columns:1fr;
+
     }
+
 }
+
 
 @media(max-width:600px){
 
     .app{
-        padding:16px 11px 45px;
+
+        padding:
+            16px
+            11px
+            45px;
+
     }
 
     .header{
+
         align-items:flex-start;
+
     }
 
     .business-box{
+
         display:none;
+
     }
 
     .stats{
+
         grid-template-columns:1fr;
+
     }
 
-    .stat-card{
+    .stat{
+
         min-height:112px;
+
     }
 
     .form-grid{
+
         grid-template-columns:1fr;
+
     }
 
     .money-grid{
-        grid-template-columns:1fr 1fr;
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+    .allocation{
+
+        grid-template-columns:
+            1fr 1fr;
+
     }
 
     .report-grid{
-        grid-template-columns:1fr 1fr;
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+    .insight-grid{
+
+        grid-template-columns:1fr;
+
     }
 
     .stat-value{
+
         font-size:23px;
+
     }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <div class="app">
 
-<!-- HEADER -->
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header class="header">
 
@@ -740,12 +1520,14 @@ footer{
             </h1>
 
             <div class="subtitle">
-                Kelola usaha dengan lebih rapi, sederhana, dan terukur.
+                Kelola usaha dengan lebih rapi, sederhana,
+                dan terukur.
             </div>
 
         </div>
 
     </div>
+
 
     <div class="business-box">
 
@@ -756,7 +1538,9 @@ footer{
         <div
             class="business-name"
             id="businessName">
+
             Usaha Saya
+
         </div>
 
     </div>
@@ -764,937 +1548,1206 @@ footer{
 </header>
 
 
-<!-- NAVIGATION -->
+
+<!-- =====================================================
+     NAV
+===================================================== -->
 
 <div class="nav-wrap">
 
-    <nav class="nav">
+<nav class="nav">
 
-        <button
-            class="active"
-            onclick="showTab('dashboard',this)">
-            Dashboard
-        </button>
+    <button
+        class="active"
+        onclick="showTab('dashboard',this)">
 
-        <button
-            onclick="showTab('sales',this)">
-            Penjualan
-        </button>
+        Dashboard
 
-        <button
-            onclick="showTab('products',this)">
-            Produk & Stok
-        </button>
+    </button>
 
-        <button
-            onclick="showTab('finance',this)">
-            Keuangan
-        </button>
 
-        <button
-            onclick="showTab('reports',this)">
-            Laporan
-        </button>
+    <button
+        onclick="showTab('sales',this)">
 
-    </nav>
+        Penjualan
+
+    </button>
+
+
+    <button
+        onclick="showTab('products',this)">
+
+        Produk & Stok
+
+    </button>
+
+
+    <button
+        onclick="showTab('finance',this)">
+
+        Keuangan
+
+    </button>
+
+
+    <button
+        onclick="showTab('reports',this)">
+
+        Laporan
+
+    </button>
+
+</nav>
 
 </div>
 
 
-<!-- ================= DASHBOARD ================= -->
+
+<!-- =====================================================
+     DASHBOARD
+===================================================== -->
 
 <section id="dashboard">
 
-    <div class="stats">
 
-        <div class="card stat-card">
+<div class="greeting">
 
-            <div class="stat-label">
-                Omzet
-            </div>
+    <div
+        class="greeting-small"
+        id="todayText">
 
-            <div
-                class="stat-value gold"
-                id="omzet">
-                Rp0
-            </div>
+        Selamat datang kembali
 
-            <div class="stat-note">
-                Total penjualan
-            </div>
+    </div>
+
+    <h2>
+
+        Halo, <span id="helloBusiness">
+            Usaha Saya
+        </span> 👋
+
+    </h2>
+
+</div>
+
+
+
+<!-- STATS -->
+
+<div class="stats">
+
+
+    <div class="card stat">
+
+        <div class="stat-label">
+            Omzet
+        </div>
+
+        <div
+            class="stat-value gold"
+            id="omzet">
+
+            Rp0
 
         </div>
 
-
-        <div class="card stat-card">
-
-            <div class="stat-label">
-                Laba Kotor
-            </div>
-
-            <div
-                class="stat-value green"
-                id="gross">
-                Rp0
-            </div>
-
-            <div class="stat-note">
-                Omzet − modal produk
-            </div>
-
-        </div>
-
-
-        <div class="card stat-card">
-
-            <div class="stat-label">
-                Pengeluaran
-            </div>
-
-            <div
-                class="stat-value red"
-                id="expenseTotal">
-                Rp0
-            </div>
-
-            <div class="stat-note">
-                Biaya operasional
-            </div>
-
-        </div>
-
-
-        <div class="card stat-card">
-
-            <div class="stat-label">
-                Laba Bersih
-            </div>
-
-            <div
-                class="stat-value green"
-                id="net">
-                Rp0
-            </div>
-
-            <div class="stat-note">
-                Setelah pengeluaran
-            </div>
-
+        <div class="stat-note">
+            Total penjualan
         </div>
 
     </div>
 
 
-    <div class="section two-column">
+
+    <div class="card stat">
+
+        <div class="stat-label">
+            Laba Kotor
+        </div>
+
+        <div
+            class="stat-value green"
+            id="gross">
+
+            Rp0
+
+        </div>
+
+        <div class="stat-note">
+            Omzet − modal produk
+        </div>
+
+    </div>
 
 
-        <!-- POSISI UANG -->
 
-        <div class="card">
+    <div class="card stat">
 
-            <div class="section-title">
+        <div class="stat-label">
+            Pengeluaran
+        </div>
 
-                <h2>
-                    Posisi Uang
-                </h2>
+        <div
+            class="stat-value red"
+            id="expenseTotal">
 
-                <span>
-                    Ringkasan
-                </span>
+            Rp0
 
-            </div>
+        </div>
 
+        <div class="stat-note">
+            Biaya operasional
+        </div>
 
-            <div class="money-grid">
-
-                <div class="money-item">
-
-                    <div class="money-label">
-                        Kas
-                    </div>
-
-                    <div
-                        class="money-value"
-                        id="cash">
-                        Rp0
-                    </div>
-
-                </div>
+    </div>
 
 
-                <div class="money-item">
 
-                    <div class="money-label">
-                        Modal
-                    </div>
+    <div class="card stat">
 
-                    <div
-                        class="money-value"
-                        id="capital">
-                        Rp0
-                    </div>
+        <div class="stat-label">
+            Laba Bersih
+        </div>
 
-                </div>
+        <div
+            class="stat-value green"
+            id="net">
 
+            Rp0
 
-                <div class="money-item">
+        </div>
 
-                    <div class="money-label">
-                        Cadangan
-                    </div>
+        <div class="stat-note">
+            Setelah pengeluaran
+        </div>
 
-                    <div
-                        class="money-value"
-                        id="reserve">
-                        Rp0
-                    </div>
-
-                </div>
+    </div>
 
 
-                <div class="money-item">
+</div>
 
-                    <div class="money-label">
-                        Boleh Diambil
-                    </div>
 
-                    <div
-                        class="money-value"
-                        id="withdraw">
-                        Rp0
-                    </div>
 
-                </div>
+<!-- MONEY + TARGET -->
 
-            </div>
+<div class="section two-column">
+
+
+    <div class="card">
+
+        <div class="section-title">
+
+            <h2>
+                Posisi Uang
+            </h2>
+
+            <span>
+                Real-time
+            </span>
 
         </div>
 
 
-        <!-- TARGET -->
-
-        <div class="card">
-
-            <div class="section-title">
-
-                <h2>
-                    Target Omzet
-                </h2>
-
-                <span>
-                    Bulanan
-                </span>
-
-            </div>
-
-            <div class="field">
-
-                <label>
-                    Target omzet
-                </label>
-
-                <input
-                    class="target-number"
-                    id="target"
-                    type="number"
-                    value="10000000"
-                    onchange="saveSettings()">
-
-            </div>
+        <div class="money-grid">
 
 
-            <div class="progress">
+            <div class="money-item">
+
+                <div class="money-label">
+                    Kas
+                </div>
 
                 <div
-                    class="progress-bar"
-                    id="targetBar">
+                    class="money-value"
+                    id="cash">
+
+                    Rp0
+
                 </div>
 
             </div>
 
 
+            <div class="money-item">
+
+                <div class="money-label">
+                    Modal Terjaga
+                </div>
+
+                <div
+                    class="money-value"
+                    id="capital">
+
+                    Rp0
+
+                </div>
+
+            </div>
+
+
+            <div class="money-item">
+
+                <div class="money-label">
+                    Cadangan
+                </div>
+
+                <div
+                    class="money-value"
+                    id="reserve">
+
+                    Rp0
+
+                </div>
+
+            </div>
+
+
+            <div class="money-item">
+
+                <div class="money-label">
+                    Boleh Diambil
+                </div>
+
+                <div
+                    class="money-value"
+                    id="withdraw">
+
+                    Rp0
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <div class="card">
+
+        <div class="section-title">
+
+            <h2>
+                Target Omzet
+            </h2>
+
+            <span>
+                Bulanan
+            </span>
+
+        </div>
+
+
+        <div class="field">
+
+            <label>
+                Target omzet
+            </label>
+
+            <input
+                class="target-input"
+                id="target"
+                type="number"
+                value="10000000"
+                onchange="saveSettings()">
+
+        </div>
+
+
+        <div class="progress">
+
             <div
-                class="note"
-                id="targetText">
-                0% tercapai
+                class="progress-bar"
+                id="targetBar">
             </div>
+
+        </div>
+
+
+        <div
+            class="note"
+            id="targetText">
+
+            0% tercapai
 
         </div>
 
     </div>
 
 
-    <!-- BANNER -->
+</div>
 
-    <div class="section business-banner">
 
-        <div class="banner-icon">
-            ✦
+
+<!-- CHART -->
+
+<div class="section card">
+
+    <div class="section-title">
+
+        <h2>
+            Pergerakan Omzet
+        </h2>
+
+        <span>
+            7 transaksi terakhir
+        </span>
+
+    </div>
+
+
+    <div
+        class="chart"
+        id="chart">
+
+    </div>
+
+</div>
+
+
+
+<!-- ALLOCATION -->
+
+<div class="section card">
+
+    <div class="section-title">
+
+        <h2>
+            🔄 Pembagian Uang
+        </h2>
+
+        <span>
+            dari laba kotor
+        </span>
+
+    </div>
+
+
+    <div class="allocation">
+
+
+        <div class="allocation-item">
+
+            <div class="money-label">
+                Modal Wajib
+            </div>
+
+            <strong
+                id="allocationCapital">
+
+                Rp0
+
+            </strong>
+
+            <small>
+                50%
+            </small>
+
         </div>
 
-        <div>
 
-            <div class="banner-title">
-                EGA Business Manager
+        <div class="allocation-item">
+
+            <div class="money-label">
+                Tambah Modal
             </div>
 
-            <div class="banner-text">
-                Bisa digunakan untuk sambal, makanan, fashion,
-                reseller, retail, jasa, dan berbagai usaha lainnya.
+            <strong
+                id="allocationAdd">
+
+                Rp0
+
+            </strong>
+
+            <small>
+                30%
+            </small>
+
+        </div>
+
+
+        <div class="allocation-item">
+
+            <div class="money-label">
+                Cadangan
             </div>
+
+            <strong
+                id="allocationReserve">
+
+                Rp0
+
+            </strong>
+
+            <small>
+                10%
+            </small>
+
+        </div>
+
+
+        <div class="allocation-item">
+
+            <div class="money-label">
+                Boleh Diambil
+            </div>
+
+            <strong
+                class="green"
+                id="allocationWithdraw">
+
+                Rp0
+
+            </strong>
+
+            <small>
+                Sisa
+            </small>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- INSIGHTS -->
+
+<div class="section insight-grid">
+
+
+    <div class="card">
+
+        <div class="section-title">
+
+            <h2>
+                🏆 Produk Terlaris
+            </h2>
+
+            <span>
+                berdasarkan unit
+            </span>
+
+        </div>
+
+
+        <div
+            class="insight-list"
+            id="topProducts">
 
         </div>
 
     </div>
+
+
+
+    <div class="card">
+
+        <div class="section-title">
+
+            <h2>
+                ⚠️ Stok Menipis
+            </h2>
+
+            <span>
+                ≤ 5 unit
+            </span>
+
+        </div>
+
+
+        <div
+            class="insight-list"
+            id="lowStock">
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- BANNER -->
+
+<div class="section banner">
+
+    <div class="banner-icon">
+        ✦
+    </div>
+
+    <div>
+
+        <div class="banner-title">
+            EGA Business Manager
+        </div>
+
+        <div class="banner-text">
+            Satu sistem untuk makanan, fashion,
+            reseller, retail, jasa, dan berbagai
+            macam usaha lainnya.
+        </div>
+
+    </div>
+
+</div>
+
 
 </section>
 
 
 
-<!-- ================= PENJUALAN ================= -->
+<!-- =====================================================
+     PENJUALAN
+===================================================== -->
 
 <section
     id="sales"
     class="hidden">
 
-    <div class="card">
 
-        <div class="section-title">
+<div class="card">
 
-            <h2>
-                Catat Penjualan
-            </h2>
+    <div class="section-title">
 
-            <span>
-                Stok otomatis berkurang
-            </span>
+        <h2>
+            Catat Penjualan
+        </h2>
 
-        </div>
-
-
-        <div class="form-grid">
-
-            <div class="field">
-
-                <label>
-                    Produk
-                </label>
-
-                <select id="saleProduct">
-                </select>
-
-            </div>
-
-
-            <div class="field">
-
-                <label>
-                    Jumlah
-                </label>
-
-                <input
-                    id="saleQty"
-                    type="number"
-                    min="1"
-                    value="1">
-
-            </div>
-
-
-            <div class="field">
-
-                <label>
-                    Harga jual / unit
-                </label>
-
-                <input
-                    id="salePrice"
-                    type="number"
-                    min="0">
-
-            </div>
-
-        </div>
-
-
-        <br>
-
-        <button
-            class="btn"
-            onclick="addSale()">
-
-            Simpan Penjualan
-
-        </button>
+        <span>
+            Stok otomatis berkurang
+        </span>
 
     </div>
 
 
-    <div class="section card">
+    <div class="form-grid">
 
-        <div class="section-title">
 
-            <h2>
-                Riwayat Penjualan
-            </h2>
+        <div class="field">
 
-            <span id="saleCount">
-                0 transaksi
-            </span>
+            <label>
+                Produk
+            </label>
+
+            <select
+                id="saleProduct">
+            </select>
+
+        </div>
+
+
+        <div class="field">
+
+            <label>
+                Jumlah
+            </label>
+
+            <input
+                id="saleQty"
+                type="number"
+                min="1"
+                value="1">
 
         </div>
 
 
-        <div class="table-wrap">
+        <div class="field">
 
-            <table>
+            <label>
+                Harga jual / unit
+            </label>
 
-                <thead>
-
-                    <tr>
-
-                        <th>
-                            Tanggal
-                        </th>
-
-                        <th>
-                            Produk
-                        </th>
-
-                        <th>
-                            Qty
-                        </th>
-
-                        <th>
-                            Omzet
-                        </th>
-
-                        <th>
-                            Modal
-                        </th>
-
-                        <th>
-                            Laba
-                        </th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody id="salesTable">
-                </tbody>
-
-            </table>
+            <input
+                id="salePrice"
+                type="number"
+                min="0">
 
         </div>
+
 
     </div>
+
+
+    <br>
+
+
+    <button
+        class="btn"
+        onclick="addSale()">
+
+        Simpan Penjualan
+
+    </button>
+
+
+</div>
+
+
+
+<div class="section card">
+
+    <div class="section-title">
+
+        <h2>
+            Riwayat Penjualan
+        </h2>
+
+        <span id="saleCount">
+            0 transaksi
+        </span>
+
+    </div>
+
+
+    <div class="table-wrap">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Tanggal</th>
+                    <th>Produk</th>
+                    <th>Qty</th>
+                    <th>Omzet</th>
+                    <th>Modal</th>
+                    <th>Laba</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="salesTable">
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
 
 </section>
 
 
 
-<!-- ================= PRODUK ================= -->
+<!-- =====================================================
+     PRODUK
+===================================================== -->
 
 <section
     id="products"
     class="hidden">
 
-    <div class="card">
 
-        <div class="section-title">
+<div class="card">
 
-            <h2>
-                Produk & Stok
-            </h2>
+    <div class="section-title">
 
-            <span>
-                Barang atau jasa
-            </span>
+        <h2>
+            Produk & Stok
+        </h2>
 
-        </div>
-
-
-        <div class="form-grid">
-
-            <div class="field">
-
-                <label>
-                    Nama produk
-                </label>
-
-                <input
-                    id="pname"
-                    placeholder="Contoh: Sambal Roa">
-
-            </div>
-
-
-            <div class="field">
-
-                <label>
-                    Modal / unit
-                </label>
-
-                <input
-                    id="pcost"
-                    type="number"
-                    placeholder="25000">
-
-            </div>
-
-
-            <div class="field">
-
-                <label>
-                    Harga jual
-                </label>
-
-                <input
-                    id="pprice"
-                    type="number"
-                    placeholder="35000">
-
-            </div>
-
-        </div>
-
-
-        <br>
-
-        <button
-            class="btn"
-            onclick="addProduct()">
-
-            Simpan Produk
-
-        </button>
+        <span>
+            Barang atau jasa
+        </span>
 
     </div>
 
 
-    <div class="section card">
+    <div class="form-grid">
 
-        <div class="section-title">
 
-            <h2>
-                Daftar Produk
-            </h2>
+        <div class="field">
 
-            <span id="productCount">
-                0 produk
-            </span>
+            <label>
+                Nama produk
+            </label>
+
+            <input
+                id="pname"
+                placeholder="Contoh: Sambal Roa">
+
+        </div>
+
+
+        <div class="field">
+
+            <label>
+                Modal / unit
+            </label>
+
+            <input
+                id="pcost"
+                type="number"
+                placeholder="25000">
 
         </div>
 
 
-        <div class="table-wrap">
+        <div class="field">
 
-            <table>
+            <label>
+                Harga jual
+            </label>
 
-                <thead>
-
-                    <tr>
-
-                        <th>
-                            Produk
-                        </th>
-
-                        <th>
-                            Modal
-                        </th>
-
-                        <th>
-                            Harga
-                        </th>
-
-                        <th>
-                            Stok
-                        </th>
-
-                        <th>
-                            Aksi
-                        </th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody id="productsTable">
-                </tbody>
-
-            </table>
+            <input
+                id="pprice"
+                type="number"
+                placeholder="35000">
 
         </div>
+
 
     </div>
+
+
+    <br>
+
+
+    <button
+        class="btn"
+        onclick="addProduct()">
+
+        Simpan Produk
+
+    </button>
+
+
+</div>
+
+
+
+<div class="section card">
+
+    <div class="section-title">
+
+        <h2>
+            Daftar Produk
+        </h2>
+
+        <span id="productCount">
+            0 produk
+        </span>
+
+    </div>
+
+
+    <div class="table-wrap">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Produk</th>
+                    <th>Modal</th>
+                    <th>Harga</th>
+                    <th>Stok</th>
+                    <th>Margin</th>
+                    <th>Aksi</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody
+                id="productsTable">
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
 
 </section>
 
 
 
-<!-- ================= KEUANGAN ================= -->
+<!-- =====================================================
+     KEUANGAN
+===================================================== -->
 
 <section
     id="finance"
     class="hidden">
 
 
-    <div class="card">
+<div class="card">
 
-        <div class="section-title">
+    <div class="section-title">
 
-            <h2>
-                Pengeluaran
-            </h2>
+        <h2>
+            Pengeluaran
+        </h2>
 
-            <span>
-                Catat semua biaya usaha
-            </span>
-
-        </div>
-
-
-        <div class="form-grid">
-
-            <div class="field">
-
-                <label>
-                    Keterangan
-                </label>
-
-                <input
-                    id="exName"
-                    placeholder="Contoh: Gas / Minyak">
-
-            </div>
-
-
-            <div class="field">
-
-                <label>
-                    Nominal
-                </label>
-
-                <input
-                    id="exAmount"
-                    type="number"
-                    placeholder="25000">
-
-            </div>
-
-
-            <div class="field">
-
-                <label>
-                    Kategori
-                </label>
-
-                <select id="exCat">
-
-                    <option>
-                        Operasional
-                    </option>
-
-                    <option>
-                        Produksi
-                    </option>
-
-                    <option>
-                        Marketing
-                    </option>
-
-                    <option>
-                        Transportasi
-                    </option>
-
-                    <option>
-                        Sewa
-                    </option>
-
-                    <option>
-                        Lainnya
-                    </option>
-
-                </select>
-
-            </div>
-
-        </div>
-
-
-        <br>
-
-        <button
-            class="btn btn-soft"
-            onclick="addExpense()">
-
-            Simpan Pengeluaran
-
-        </button>
+        <span>
+            Semua biaya usaha
+        </span>
 
     </div>
 
 
+    <div class="form-grid">
 
-    <!-- ATURAN -->
 
-    <div class="section card">
+        <div class="field">
 
-        <div class="section-title">
+            <label>
+                Keterangan
+            </label>
 
-            <h2>
-                Aturan Pembagian Laba
-            </h2>
-
-            <span>
-                Bisa disesuaikan
-            </span>
+            <input
+                id="exName"
+                placeholder="Contoh: Gas / Minyak">
 
         </div>
 
 
-        <div class="form-grid">
+        <div class="field">
 
-            <div class="field">
+            <label>
+                Nominal
+            </label>
 
-                <label>
-                    Modal wajib %
-                </label>
-
-                <input
-                    id="ruleCapital"
-                    type="number"
-                    value="50"
-                    onchange="saveSettings()">
-
-            </div>
-
-
-            <div class="field">
-
-                <label>
-                    Tambah modal %
-                </label>
-
-                <input
-                    id="ruleAdd"
-                    type="number"
-                    value="30"
-                    onchange="saveSettings()">
-
-            </div>
-
-
-            <div class="field">
-
-                <label>
-                    Dana cadangan %
-                </label>
-
-                <input
-                    id="ruleReserve"
-                    type="number"
-                    value="10"
-                    onchange="saveSettings()">
-
-            </div>
+            <input
+                id="exAmount"
+                type="number"
+                placeholder="25000">
 
         </div>
 
 
-        <div class="note">
-            Sisa persentase otomatis dihitung sebagai uang yang boleh diambil.
+        <div class="field">
+
+            <label>
+                Kategori
+            </label>
+
+            <select id="exCat">
+
+                <option>
+                    Operasional
+                </option>
+
+                <option>
+                    Produksi
+                </option>
+
+                <option>
+                    Marketing
+                </option>
+
+                <option>
+                    Transportasi
+                </option>
+
+                <option>
+                    Sewa
+                </option>
+
+                <option>
+                    Lainnya
+                </option>
+
+            </select>
+
         </div>
+
 
     </div>
 
 
-
-    <!-- RIWAYAT -->
-
-    <div class="section card">
-
-        <div class="section-title">
-
-            <h2>
-                Riwayat Keuangan
-            </h2>
-
-        </div>
+    <br>
 
 
-        <div class="table-wrap">
+    <button
+        class="btn btn-soft"
+        onclick="addExpense()">
 
-            <table>
+        Simpan Pengeluaran
 
-                <thead>
+    </button>
 
-                    <tr>
 
-                        <th>
-                            Tanggal
-                        </th>
+</div>
 
-                        <th>
-                            Jenis
-                        </th>
 
-                        <th>
-                            Keterangan
-                        </th>
 
-                        <th>
-                            Masuk
-                        </th>
+<div class="section card">
 
-                        <th>
-                            Keluar
-                        </th>
+    <div class="section-title">
 
-                    </tr>
+        <h2>
+            Aturan Pembagian Laba
+        </h2>
 
-                </thead>
-
-                <tbody id="financeTable">
-                </tbody>
-
-            </table>
-
-        </div>
+        <span>
+            Bisa disesuaikan
+        </span>
 
     </div>
+
+
+    <div class="form-grid">
+
+
+        <div class="field">
+
+            <label>
+                Modal wajib %
+            </label>
+
+            <input
+                id="ruleCapital"
+                type="number"
+                value="50"
+                onchange="saveSettings()">
+
+        </div>
+
+
+        <div class="field">
+
+            <label>
+                Tambah modal %
+            </label>
+
+            <input
+                id="ruleAdd"
+                type="number"
+                value="30"
+                onchange="saveSettings()">
+
+        </div>
+
+
+        <div class="field">
+
+            <label>
+                Dana cadangan %
+            </label>
+
+            <input
+                id="ruleReserve"
+                type="number"
+                value="10"
+                onchange="saveSettings()">
+
+        </div>
+
+
+    </div>
+
+
+    <div class="note">
+
+        Sisa persentase otomatis menjadi uang
+        yang boleh diambil.
+
+    </div>
+
+</div>
+
+
+
+<div class="section card">
+
+    <div class="section-title">
+
+        <h2>
+            Riwayat Keuangan
+        </h2>
+
+    </div>
+
+
+    <div class="table-wrap">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Tanggal</th>
+                    <th>Jenis</th>
+                    <th>Keterangan</th>
+                    <th>Masuk</th>
+                    <th>Keluar</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody
+                id="financeTable">
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
 
 </section>
 
 
 
-<!-- ================= LAPORAN ================= -->
+<!-- =====================================================
+     LAPORAN
+===================================================== -->
 
 <section
     id="reports"
     class="hidden">
 
-    <div class="card">
 
-        <div class="section-title">
+<div class="card">
 
-            <h2>
-                Laporan Usaha
-            </h2>
+    <div class="section-title">
 
-            <span>
-                Ringkasan seluruh data
-            </span>
+        <h2>
+            Laporan Usaha
+        </h2>
 
-        </div>
-
-
-        <div class="report-grid">
-
-            <div class="report-item">
-
-                <div class="label">
-                    Transaksi
-                </div>
-
-                <b id="trx">
-                    0
-                </b>
-
-            </div>
-
-
-            <div class="report-item">
-
-                <div class="label">
-                    Produk
-                </div>
-
-                <b id="reportProducts">
-                    0
-                </b>
-
-            </div>
-
-
-            <div class="report-item">
-
-                <div class="label">
-                    Unit Terjual
-                </div>
-
-                <b id="units">
-                    0
-                </b>
-
-            </div>
-
-
-            <div class="report-item">
-
-                <div class="label">
-                    Laba Bersih
-                </div>
-
-                <b
-                    class="green"
-                    id="reportNet">
-                    Rp0
-                </b>
-
-            </div>
-
-        </div>
+        <span>
+            Ringkasan
+        </span>
 
     </div>
 
 
-    <div class="section card">
+    <div class="report-grid">
 
-        <div class="section-title">
 
-            <h2>
-                Backup Data
-            </h2>
+        <div class="report-item">
 
-            <span>
-                Keamanan
-            </span>
+            <div class="label">
+                Transaksi
+            </div>
+
+            <b id="trx">
+                0
+            </b>
 
         </div>
 
 
-        <button
-            class="btn btn-soft"
-            onclick="exportData()">
+        <div class="report-item">
 
-            Export Data
+            <div class="label">
+                Produk
+            </div>
 
-        </button>
+            <b id="reportProducts">
+                0
+            </b>
 
-
-        <button
-            class="btn btn-danger"
-            onclick="resetAll()">
-
-            Reset Semua Data
-
-        </button>
-
-
-        <div class="note">
-            Data V1 tersimpan otomatis di browser/perangkat ini.
         </div>
+
+
+        <div class="report-item">
+
+            <div class="label">
+                Unit Terjual
+            </div>
+
+            <b id="units">
+                0
+            </b>
+
+        </div>
+
+
+        <div class="report-item">
+
+            <div class="label">
+                Laba Bersih
+            </div>
+
+            <b
+                class="green"
+                id="reportNet">
+
+                Rp0
+
+            </b>
+
+        </div>
+
 
     </div>
+
+</div>
+
+
+
+<div class="section card">
+
+    <div class="section-title">
+
+        <h2>
+            Backup Data
+        </h2>
+
+        <span>
+            Keamanan
+        </span>
+
+    </div>
+
+
+    <button
+        class="btn btn-soft"
+        onclick="exportData()">
+
+        Export Data
+
+    </button>
+
+
+    <button
+        class="btn btn-danger"
+        onclick="resetAll()">
+
+        Reset Semua Data
+
+    </button>
+
+
+    <div class="note">
+
+        Data V4 tersimpan otomatis di browser/perangkat ini.
+
+    </div>
+
+</div>
+
 
 </section>
 
 
+
 <footer>
-    EGA Business Manager • Premium Edition
+
+    EGA Business Manager • Premium V4
+
 </footer>
+
 
 </div>
 
@@ -1708,25 +2761,25 @@ footer{
 
 <script>
 
-/* =========================================
+/* =====================================================
    DATA
-========================================= */
+===================================================== */
 
 const KEY =
-"ega_business_manager_premium_v3";
+    "ega_business_manager_v4";
 
 
 const DEFAULT_DATA = {
 
-    products: [],
+    products:[],
 
-    sales: [],
+    sales:[],
 
-    expenses: [],
+    expenses:[],
 
-    target: 10000000,
+    target:10000000,
 
-    rules: {
+    rules:{
 
         capital:50,
 
@@ -1742,37 +2795,40 @@ const DEFAULT_DATA = {
 
     withdraw:0,
 
+    protectedCapital:0,
+
     business:"Usaha Saya"
 
 };
 
 
-let d = {
-
-    ...DEFAULT_DATA,
-
-    ...JSON.parse(
-        localStorage.getItem(KEY) || "{}"
-    )
-
-};
+let saved =
+    JSON.parse(
+        localStorage.getItem(KEY) ||
+        "null"
+    );
 
 
-d.rules = {
+let d =
+    saved
+    ?
+    {
+        ...DEFAULT_DATA,
+        ...saved,
+        rules:{
+            ...DEFAULT_DATA.rules,
+            ...(saved.rules || {})
+        }
+    }
+    :
+    DEFAULT_DATA;
 
-    ...DEFAULT_DATA.rules,
 
-    ...(d.rules || {})
+/* =====================================================
+   RUPIAH
+===================================================== */
 
-};
-
-
-
-/* =========================================
-   FORMAT RUPIAH
-========================================= */
-
-function rupiah(number){
+function rupiah(value){
 
     return new Intl.NumberFormat(
         "id-ID",
@@ -1781,15 +2837,46 @@ function rupiah(number){
             currency:"IDR",
             maximumFractionDigits:0
         }
-    ).format(number || 0);
+    ).format(
+        value || 0
+    );
 
 }
 
 
+/* =====================================================
+   DATE
+===================================================== */
 
-/* =========================================
+function updateDate(){
+
+    const date =
+        new Date();
+
+
+    const text =
+        date.toLocaleDateString(
+            "id-ID",
+            {
+                weekday:"long",
+                day:"numeric",
+                month:"long",
+                year:"numeric"
+            }
+        );
+
+
+    document.getElementById(
+        "todayText"
+    ).textContent =
+        text;
+
+}
+
+
+/* =====================================================
    SAVE
-========================================= */
+===================================================== */
 
 function save(){
 
@@ -1803,63 +2890,86 @@ function save(){
 }
 
 
-
-/* =========================================
+/* =====================================================
    TOAST
-========================================= */
+===================================================== */
 
 function toast(message){
 
     const box =
-        document.getElementById("toast");
+        document.getElementById(
+            "toast"
+        );
 
-    box.textContent = message;
 
-    box.classList.add("show");
+    box.textContent =
+        message;
+
+
+    box.classList.add(
+        "show"
+    );
+
 
     setTimeout(
         ()=>{
-            box.classList.remove("show");
+            box.classList.remove(
+                "show"
+            );
         },
-        2000
+        2200
     );
 
 }
 
 
-
-/* =========================================
+/* =====================================================
    TAB
-========================================= */
+===================================================== */
 
-function showTab(id,button){
+function showTab(
+    id,
+    button
+){
 
     document
-        .querySelectorAll("section[id]")
+        .querySelectorAll(
+            "section[id]"
+        )
         .forEach(
             section=>{
-                section.classList.add("hidden");
+                section.classList.add(
+                    "hidden"
+                );
             }
         );
 
 
     document
         .getElementById(id)
-        .classList.remove("hidden");
+        .classList.remove(
+            "hidden"
+        );
 
 
     document
-        .querySelectorAll(".nav button")
+        .querySelectorAll(
+            ".nav button"
+        )
         .forEach(
             btn=>{
-                btn.classList.remove("active");
+                btn.classList.remove(
+                    "active"
+                );
             }
         );
 
 
     if(button){
 
-        button.classList.add("active");
+        button.classList.add(
+            "active"
+        );
 
     }
 
@@ -1869,30 +2979,37 @@ function showTab(id,button){
 }
 
 
-
-/* =========================================
-   PRODUK
-========================================= */
+/* =====================================================
+   PRODUCT
+===================================================== */
 
 function addProduct(){
 
     const name =
         document
-            .getElementById("pname")
+            .getElementById(
+                "pname"
+            )
             .value
             .trim();
+
 
     const cost =
         Number(
             document
-                .getElementById("pcost")
+                .getElementById(
+                    "pcost"
+                )
                 .value
         );
+
 
     const price =
         Number(
             document
-                .getElementById("pprice")
+                .getElementById(
+                    "pprice"
+                )
                 .value
         );
 
@@ -1903,7 +3020,9 @@ function addProduct(){
         price < 0
     ){
 
-        toast("Lengkapi data produk.");
+        toast(
+            "Lengkapi data produk."
+        );
 
         return;
 
@@ -1912,7 +3031,8 @@ function addProduct(){
 
     d.products.push({
 
-        id:Date.now(),
+        id:
+            Date.now(),
 
         name:name,
 
@@ -1925,29 +3045,41 @@ function addProduct(){
     });
 
 
-    document.getElementById("pname").value="";
-    document.getElementById("pcost").value="";
-    document.getElementById("pprice").value="";
+    document.getElementById(
+        "pname"
+    ).value="";
+
+
+    document.getElementById(
+        "pcost"
+    ).value="";
+
+
+    document.getElementById(
+        "pprice"
+    ).value="";
 
 
     save();
 
-    toast("Produk berhasil ditambahkan.");
+
+    toast(
+        "Produk berhasil ditambahkan."
+    );
 
 }
 
 
-
-/* =========================================
-   TAMBAH STOK
-========================================= */
+/* =====================================================
+   STOCK
+===================================================== */
 
 function addStock(id){
 
     const amount =
         Number(
             prompt(
-                "Berapa stok yang ditambahkan?"
+                "Jumlah stok yang ditambahkan:"
             )
         );
 
@@ -1964,7 +3096,8 @@ function addStock(id){
 
     const product =
         d.products.find(
-            item=>item.id===id
+            item =>
+                item.id === id
         );
 
 
@@ -1975,26 +3108,30 @@ function addStock(id){
     }
 
 
-    product.stock += amount;
+    product.stock +=
+        amount;
 
 
     save();
 
-    toast("Stok berhasil ditambahkan.");
+
+    toast(
+        "Stok berhasil ditambahkan."
+    );
 
 }
 
 
-
-/* =========================================
-   HAPUS PRODUK
-========================================= */
+/* =====================================================
+   DELETE PRODUCT
+===================================================== */
 
 function deleteProduct(id){
 
     const product =
         d.products.find(
-            item=>item.id===id
+            item =>
+                item.id === id
         );
 
 
@@ -2015,29 +3152,35 @@ function deleteProduct(id){
 
         d.products =
             d.products.filter(
-                item=>item.id!==id
+                item =>
+                    item.id !== id
             );
+
 
         save();
 
-        toast("Produk dihapus.");
+
+        toast(
+            "Produk dihapus."
+        );
 
     }
 
 }
 
 
-
-/* =========================================
-   PENJUALAN
-========================================= */
+/* =====================================================
+   SALES
+===================================================== */
 
 function addSale(){
 
     const productId =
         Number(
             document
-                .getElementById("saleProduct")
+                .getElementById(
+                    "saleProduct"
+                )
                 .value
         );
 
@@ -2045,7 +3188,9 @@ function addSale(){
     const qty =
         Number(
             document
-                .getElementById("saleQty")
+                .getElementById(
+                    "saleQty"
+                )
                 .value
         );
 
@@ -2053,14 +3198,17 @@ function addSale(){
     const price =
         Number(
             document
-                .getElementById("salePrice")
+                .getElementById(
+                    "salePrice"
+                )
                 .value
         );
 
 
     const product =
         d.products.find(
-            item=>item.id===productId
+            item =>
+                item.id === productId
         );
 
 
@@ -2079,7 +3227,9 @@ function addSale(){
     }
 
 
-    if(product.stock < qty){
+    if(
+        product.stock < qty
+    ){
 
         toast(
             "Stok tidak cukup."
@@ -2102,50 +3252,61 @@ function addSale(){
         omzet - modal;
 
 
-    product.stock -= qty;
+    product.stock -=
+        qty;
 
 
     d.sales.unshift({
 
-        id:Date.now(),
+        id:
+            Date.now(),
 
         date:
             new Date()
-                .toLocaleString("id-ID"),
+                .toLocaleString(
+                    "id-ID"
+                ),
+
+        timestamp:
+            Date.now(),
 
         product:
             product.name,
 
         qty:qty,
 
-        total:omzet,
+        total:
+            omzet,
 
-        cost:modal,
+        cost:
+            modal,
 
-        laba:laba
+        laba:
+            laba
 
     });
 
 
     /*
-        Uang penjualan masuk ke kas.
+        UANG MASUK ADALAH OMZET PENUH.
+
+        Ini penting supaya kas usaha
+        tidak salah hitung.
     */
 
-    d.cash += omzet;
+    d.cash +=
+        omzet;
 
 
     /*
-        Pembagian laba.
-
-        Modal produk tetap dianggap
-        sebagai biaya/HPP.
-
-        Profit yang tersedia:
-        omzet - modal produk.
+        Bagian laba yang dipisahkan.
     */
 
     const profit =
-        Math.max(0,laba);
+        Math.max(
+            0,
+            laba
+        );
 
 
     const capital =
@@ -2176,12 +3337,21 @@ function addSale(){
         );
 
 
-    d.reserve += reserve;
+    d.protectedCapital +=
+        capital +
+        addCapital;
 
-    d.withdraw += withdraw;
+
+    d.reserve +=
+        reserve;
+
+
+    d.withdraw +=
+        withdraw;
 
 
     save();
+
 
     toast(
         "Penjualan berhasil dicatat."
@@ -2190,16 +3360,17 @@ function addSale(){
 }
 
 
-
-/* =========================================
-   PENGELUARAN
-========================================= */
+/* =====================================================
+   EXPENSE
+===================================================== */
 
 function addExpense(){
 
     const name =
         document
-            .getElementById("exName")
+            .getElementById(
+                "exName"
+            )
             .value
             .trim();
 
@@ -2207,14 +3378,18 @@ function addExpense(){
     const amount =
         Number(
             document
-                .getElementById("exAmount")
+                .getElementById(
+                    "exAmount"
+                )
                 .value
         );
 
 
     const category =
         document
-            .getElementById("exCat")
+            .getElementById(
+                "exCat"
+            )
             .value;
 
 
@@ -2234,11 +3409,17 @@ function addExpense(){
 
     d.expenses.unshift({
 
-        id:Date.now(),
+        id:
+            Date.now(),
 
         date:
             new Date()
-                .toLocaleString("id-ID"),
+                .toLocaleString(
+                    "id-ID"
+                ),
+
+        timestamp:
+            Date.now(),
 
         name:name,
 
@@ -2249,14 +3430,22 @@ function addExpense(){
     });
 
 
-    d.cash -= amount;
+    d.cash -=
+        amount;
 
 
-    document.getElementById("exName").value="";
-    document.getElementById("exAmount").value="";
+    document.getElementById(
+        "exName"
+    ).value="";
+
+
+    document.getElementById(
+        "exAmount"
+    ).value="";
 
 
     save();
+
 
     toast(
         "Pengeluaran berhasil dicatat."
@@ -2265,43 +3454,54 @@ function addExpense(){
 }
 
 
-
-/* =========================================
-   PENGATURAN
-========================================= */
+/* =====================================================
+   SETTINGS
+===================================================== */
 
 function saveSettings(){
 
     const target =
         Number(
             document
-                .getElementById("target")
+                .getElementById(
+                    "target"
+                )
                 .value
-        ) || 10000000;
+        ) ||
+        10000000;
 
 
     const capital =
         Number(
             document
-                .getElementById("ruleCapital")
+                .getElementById(
+                    "ruleCapital"
+                )
                 .value
-        ) || 0;
+        ) ||
+        0;
 
 
     const add =
         Number(
             document
-                .getElementById("ruleAdd")
+                .getElementById(
+                    "ruleAdd"
+                )
                 .value
-        ) || 0;
+        ) ||
+        0;
 
 
     const reserve =
         Number(
             document
-                .getElementById("ruleReserve")
+                .getElementById(
+                    "ruleReserve"
+                )
                 .value
-        ) || 0;
+        ) ||
+        0;
 
 
     if(
@@ -2320,7 +3520,8 @@ function saveSettings(){
     }
 
 
-    d.target = target;
+    d.target =
+        target;
 
 
     d.rules = {
@@ -2336,6 +3537,7 @@ function saveSettings(){
 
     save();
 
+
     toast(
         "Pengaturan disimpan."
     );
@@ -2343,14 +3545,337 @@ function saveSettings(){
 }
 
 
+/* =====================================================
+   TOP PRODUCTS
+===================================================== */
 
-/* =========================================
+function renderTopProducts(){
+
+    const box =
+        document.getElementById(
+            "topProducts"
+        );
+
+
+    const totals = {};
+
+
+    d.sales.forEach(
+        sale=>{
+
+            if(
+                !totals[
+                    sale.product
+                ]
+            ){
+
+                totals[
+                    sale.product
+                ] = 0;
+
+            }
+
+
+            totals[
+                sale.product
+            ] +=
+                sale.qty;
+
+        }
+    );
+
+
+    const list =
+        Object.entries(
+            totals
+        )
+        .sort(
+            (a,b)=>b[1]-a[1]
+        )
+        .slice(
+            0,
+            4
+        );
+
+
+    if(!list.length){
+
+        box.innerHTML =
+
+            `
+                <div class="empty">
+                    Belum ada data penjualan.
+                </div>
+            `;
+
+        return;
+
+    }
+
+
+    box.innerHTML =
+        list
+        .map(
+            (item,index)=>`
+
+                <div class="insight-row">
+
+                    <div>
+
+                        <div class="insight-name">
+
+                            ${index+1}.
+                            ${item[0]}
+
+                        </div>
+
+                        <div class="insight-meta">
+
+                            ${item[1]} unit terjual
+
+                        </div>
+
+                    </div>
+
+                    <div class="badge">
+
+                        Terlaris
+
+                    </div>
+
+                </div>
+
+            `
+        )
+        .join("");
+
+}
+
+
+/* =====================================================
+   LOW STOCK
+===================================================== */
+
+function renderLowStock(){
+
+    const box =
+        document.getElementById(
+            "lowStock"
+        );
+
+
+    const list =
+        d.products
+        .filter(
+            product =>
+                product.stock <= 5
+        )
+        .sort(
+            (a,b)=>
+                a.stock -
+                b.stock
+        )
+        .slice(
+            0,
+            5
+        );
+
+
+    if(!list.length){
+
+        box.innerHTML =
+
+            `
+                <div class="empty">
+                    Semua stok masih aman.
+                </div>
+            `;
+
+        return;
+
+    }
+
+
+    box.innerHTML =
+        list
+        .map(
+            product=>`
+
+                <div class="insight-row">
+
+                    <div>
+
+                        <div class="insight-name">
+
+                            ${product.name}
+
+                        </div>
+
+                        <div class="insight-meta">
+
+                            Stok tersisa:
+                            ${product.stock}
+
+                        </div>
+
+                    </div>
+
+                    <div class="badge low">
+
+                        ${product.stock === 0
+                            ? "Habis"
+                            : "Menipis"}
+
+                    </div>
+
+                </div>
+
+            `
+        )
+        .join("");
+
+}
+
+
+/* =====================================================
+   CHART
+===================================================== */
+
+function renderChart(){
+
+    const box =
+        document.getElementById(
+            "chart"
+        );
+
+
+    const sales =
+        d.sales
+        .slice(
+            0,
+            7
+        )
+        .reverse();
+
+
+    if(!sales.length){
+
+        box.innerHTML =
+
+            `
+                <div
+                    class="empty"
+                    style="width:100%">
+                    Belum ada penjualan.
+                </div>
+            `;
+
+        return;
+
+    }
+
+
+    const max =
+        Math.max(
+            ...sales.map(
+                item =>
+                    item.total
+            ),
+            1
+        );
+
+
+    box.innerHTML =
+        sales
+        .map(
+            sale=>{
+
+                const height =
+                    Math.max(
+                        4,
+                        sale.total /
+                        max *
+                        100
+                    );
+
+
+                return `
+
+                    <div class="chart-column">
+
+                        <div class="chart-value">
+
+                            ${formatShort(
+                                sale.total
+                            )}
+
+                        </div>
+
+                        <div
+                            class="chart-bar"
+                            style="
+                                height:${height}%;
+                            ">
+
+                        </div>
+
+                        <div class="chart-label">
+
+                            ${sale.qty}x
+
+                        </div>
+
+                    </div>
+
+                `;
+
+            }
+        )
+        .join("");
+
+}
+
+
+function formatShort(value){
+
+    if(value >= 1000000){
+
+        return (
+            (value/1000000)
+            .toFixed(1)
+            .replace(".0","")
+            +
+            "jt"
+        );
+
+    }
+
+
+    if(value >= 1000){
+
+        return (
+            Math.round(
+                value/1000
+            )
+            +
+            "k"
+        );
+
+    }
+
+
+    return value;
+
+}
+
+
+/* =====================================================
    EXPORT
-========================================= */
+===================================================== */
 
 function exportData(){
 
-    const file =
+    const blob =
         new Blob(
             [
                 JSON.stringify(
@@ -2360,17 +3885,26 @@ function exportData(){
                 )
             ],
             {
-                type:"application/json"
+                type:
+                    "application/json"
             }
         );
 
 
     const link =
-        document.createElement("a");
+        document.createElement(
+            "a"
+        );
+
+
+    const url =
+        URL.createObjectURL(
+            blob
+        );
 
 
     link.href =
-        URL.createObjectURL(file);
+        url;
 
 
     link.download =
@@ -2381,7 +3915,7 @@ function exportData(){
 
 
     URL.revokeObjectURL(
-        link.href
+        url
     );
 
 
@@ -2392,10 +3926,9 @@ function exportData(){
 }
 
 
-
-/* =========================================
+/* =====================================================
    RESET
-========================================= */
+===================================================== */
 
 function resetAll(){
 
@@ -2405,7 +3938,9 @@ function resetAll(){
         )
     ){
 
-        localStorage.removeItem(KEY);
+        localStorage.removeItem(
+            KEY
+        );
 
         location.reload();
 
@@ -2414,17 +3949,17 @@ function resetAll(){
 }
 
 
-
-/* =========================================
+/* =====================================================
    RENDER
-========================================= */
+===================================================== */
 
 function render(){
 
     const omzet =
         d.sales.reduce(
             (sum,item)=>
-                sum + item.total,
+                sum +
+                item.total,
             0
         );
 
@@ -2432,7 +3967,8 @@ function render(){
     const gross =
         d.sales.reduce(
             (sum,item)=>
-                sum + item.laba,
+                sum +
+                item.laba,
             0
         );
 
@@ -2440,24 +3976,29 @@ function render(){
     const expenses =
         d.expenses.reduce(
             (sum,item)=>
-                sum + item.amount,
+                sum +
+                item.amount,
             0
         );
 
 
     const net =
-        gross - expenses;
+        gross -
+        expenses;
 
 
     const units =
         d.sales.reduce(
             (sum,item)=>
-                sum + item.qty,
+                sum +
+                item.qty,
             0
         );
 
 
-    /* HEADER */
+    /*
+        HEADER
+    */
 
     document.getElementById(
         "businessName"
@@ -2465,93 +4006,189 @@ function render(){
         d.business;
 
 
-    /* DASHBOARD */
+    document.getElementById(
+        "helloBusiness"
+    ).textContent =
+        d.business;
+
+
+    /*
+        DASHBOARD
+    */
 
     document.getElementById(
         "omzet"
     ).textContent =
-        rupiah(omzet);
+        rupiah(
+            omzet
+        );
 
 
     document.getElementById(
         "gross"
     ).textContent =
-        rupiah(gross);
+        rupiah(
+            gross
+        );
 
 
     document.getElementById(
         "expenseTotal"
     ).textContent =
-        rupiah(expenses);
+        rupiah(
+            expenses
+        );
 
 
     document.getElementById(
         "net"
     ).textContent =
-        rupiah(net);
+        rupiah(
+            net
+        );
 
 
     document.getElementById(
         "cash"
     ).textContent =
-        rupiah(d.cash);
+        rupiah(
+            d.cash
+        );
 
 
     document.getElementById(
         "capital"
     ).textContent =
         rupiah(
-            Math.max(
-                0,
-                d.cash -
-                d.reserve -
-                d.withdraw
-            )
+            d.protectedCapital
         );
 
 
     document.getElementById(
         "reserve"
     ).textContent =
-        rupiah(d.reserve);
+        rupiah(
+            d.reserve
+        );
 
 
     document.getElementById(
         "withdraw"
     ).textContent =
-        rupiah(d.withdraw);
+        rupiah(
+            d.withdraw
+        );
 
 
-    /* TARGET */
+    /*
+        TARGET
+    */
 
     const target =
-        d.target || 1;
+        d.target ||
+        1;
 
 
-    const percent =
+    const percentage =
         Math.min(
             100,
-            omzet / target * 100
+            omzet /
+            target *
+            100
         );
 
 
     document.getElementById(
         "targetBar"
     ).style.width =
-        percent + "%";
+        percentage +
+        "%";
 
 
     document.getElementById(
         "targetText"
     ).textContent =
-        Math.round(percent) +
+
+        Math.round(
+            percentage
+        ) +
         "% tercapai • " +
-        rupiah(omzet) +
+        rupiah(
+            omzet
+        ) +
         " / " +
-        rupiah(target);
+        rupiah(
+            target
+        );
 
 
-    /* SALE PRODUCT */
+    /*
+        ALLOCATION
+    */
+
+    const capital =
+        gross *
+        d.rules.capital /
+        100;
+
+
+    const addCapital =
+        gross *
+        d.rules.add /
+        100;
+
+
+    const reserve =
+        gross *
+        d.rules.reserve /
+        100;
+
+
+    const withdraw =
+        Math.max(
+            0,
+            gross -
+            capital -
+            addCapital -
+            reserve
+        );
+
+
+    document.getElementById(
+        "allocationCapital"
+    ).textContent =
+        rupiah(
+            capital
+        );
+
+
+    document.getElementById(
+        "allocationAdd"
+    ).textContent =
+        rupiah(
+            addCapital
+        );
+
+
+    document.getElementById(
+        "allocationReserve"
+    ).textContent =
+        rupiah(
+            reserve
+        );
+
+
+    document.getElementById(
+        "allocationWithdraw"
+    ).textContent =
+        rupiah(
+            withdraw
+        );
+
+
+    /*
+        SALE SELECT
+    */
 
     const select =
         document.getElementById(
@@ -2560,14 +4197,17 @@ function render(){
 
 
     select.innerHTML =
+
         d.products.length
 
         ?
 
-        d.products.map(
+        d.products
+        .map(
             product=>`
 
-                <option value="${product.id}">
+                <option
+                    value="${product.id}">
 
                     ${product.name}
                     • stok ${product.stock}
@@ -2575,7 +4215,8 @@ function render(){
                 </option>
 
             `
-        ).join("")
+        )
+        .join("")
 
         :
 
@@ -2586,22 +4227,9 @@ function render(){
         `;
 
 
-    if(
-        d.products.length &&
-        document.getElementById(
-            "salePrice"
-        ).value === ""
-    ){
-
-        document.getElementById(
-            "salePrice"
-        ).value =
-            d.products[0].price;
-
-    }
-
-
-    /* PRODUCTS TABLE */
+    /*
+        PRODUCT TABLE
+    */
 
     document.getElementById(
         "productCount"
@@ -2618,61 +4246,96 @@ function render(){
 
         ?
 
-        d.products.map(
-            product=>`
+        d.products
+        .map(
+            product=>{
 
-                <tr>
+                const margin =
+                    product.price -
+                    product.cost;
 
-                    <td>
-                        <strong>
-                            ${product.name}
-                        </strong>
-                    </td>
 
-                    <td>
-                        ${rupiah(product.cost)}
-                    </td>
+                return `
 
-                    <td>
-                        ${rupiah(product.price)}
-                    </td>
+                    <tr>
 
-                    <td>
-                        ${product.stock}
-                    </td>
+                        <td>
 
-                    <td>
+                            <strong>
+                                ${product.name}
+                            </strong>
 
-                        <button
-                            class="btn btn-soft"
-                            onclick="addStock(${product.id})">
+                        </td>
 
-                            + Stok
+                        <td>
+                            ${rupiah(
+                                product.cost
+                            )}
+                        </td>
 
-                        </button>
+                        <td>
+                            ${rupiah(
+                                product.price
+                            )}
+                        </td>
 
-                        <button
-                            class="btn btn-danger"
-                            onclick="deleteProduct(${product.id})">
+                        <td>
+                            ${product.stock}
+                        </td>
 
-                            Hapus
+                        <td class="green">
 
-                        </button>
+                            ${rupiah(
+                                margin
+                            )}
 
-                    </td>
+                        </td>
 
-                </tr>
+                        <td>
 
-            `
-        ).join("")
+                            <button
+                                class="btn btn-soft"
+                                onclick="
+                                    addStock(
+                                        ${product.id}
+                                    )
+                                ">
+
+                                + Stok
+
+                            </button>
+
+
+                            <button
+                                class="btn btn-danger"
+                                onclick="
+                                    deleteProduct(
+                                        ${product.id}
+                                    )
+                                ">
+
+                                Hapus
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                `;
+
+            }
+        )
+        .join("")
 
         :
 
         `
+
             <tr>
 
                 <td
-                    colspan="5"
+                    colspan="6"
                     class="empty">
 
                     Belum ada produk.
@@ -2680,10 +4343,13 @@ function render(){
                 </td>
 
             </tr>
+
         `;
 
 
-    /* SALES TABLE */
+    /*
+        SALES TABLE
+    */
 
     document.getElementById(
         "saleCount"
@@ -2701,44 +4367,55 @@ function render(){
         ?
 
         d.sales
-            .slice(0,50)
-            .map(
-                sale=>`
+        .slice(
+            0,
+            50
+        )
+        .map(
+            sale=>`
 
-                    <tr>
+                <tr>
 
-                        <td>
-                            ${sale.date}
-                        </td>
+                    <td>
+                        ${sale.date}
+                    </td>
 
-                        <td>
-                            ${sale.product}
-                        </td>
+                    <td>
+                        ${sale.product}
+                    </td>
 
-                        <td>
-                            ${sale.qty}
-                        </td>
+                    <td>
+                        ${sale.qty}
+                    </td>
 
-                        <td class="gold">
-                            ${rupiah(sale.total)}
-                        </td>
+                    <td class="gold">
+                        ${rupiah(
+                            sale.total
+                        )}
+                    </td>
 
-                        <td>
-                            ${rupiah(sale.cost)}
-                        </td>
+                    <td>
+                        ${rupiah(
+                            sale.cost
+                        )}
+                    </td>
 
-                        <td class="green">
-                            ${rupiah(sale.laba)}
-                        </td>
+                    <td class="green">
+                        ${rupiah(
+                            sale.laba
+                        )}
+                    </td>
 
-                    </tr>
+                </tr>
 
-                `
-            ).join("")
+            `
+        )
+        .join("")
 
         :
 
         `
+
             <tr>
 
                 <td
@@ -2750,10 +4427,13 @@ function render(){
                 </td>
 
             </tr>
+
         `;
 
 
-    /* FINANCE TABLE */
+    /*
+        FINANCE TABLE
+    */
 
     const financeRows = [
 
@@ -2776,7 +4456,9 @@ function render(){
                     </td>
 
                     <td class="green">
-                        ${rupiah(sale.total)}
+                        ${rupiah(
+                            sale.total
+                        )}
                     </td>
 
                     <td>
@@ -2784,8 +4466,10 @@ function render(){
                     </td>
 
                 </tr>
+
             `
         ),
+
 
         ...d.expenses.map(
             expense=>`
@@ -2810,10 +4494,13 @@ function render(){
                     </td>
 
                     <td class="red">
-                        ${rupiah(expense.amount)}
+                        ${rupiah(
+                            expense.amount
+                        )}
                     </td>
 
                 </tr>
+
             `
         )
 
@@ -2829,12 +4516,16 @@ function render(){
         ?
 
         financeRows
-            .slice(0,80)
-            .join("")
+        .slice(
+            0,
+            80
+        )
+        .join("")
 
         :
 
         `
+
             <tr>
 
                 <td
@@ -2846,10 +4537,13 @@ function render(){
                 </td>
 
             </tr>
+
         `;
 
 
-    /* REPORT */
+    /*
+        REPORT
+    */
 
     document.getElementById(
         "trx"
@@ -2873,10 +4567,14 @@ function render(){
     document.getElementById(
         "reportNet"
     ).textContent =
-        rupiah(net);
+        rupiah(
+            net
+        );
 
 
-    /* SETTINGS */
+    /*
+        SETTINGS
+    */
 
     document.getElementById(
         "target"
@@ -2901,16 +4599,28 @@ function render(){
     ).value =
         d.rules.reserve;
 
+
+    /*
+        OTHER
+    */
+
+    renderTopProducts();
+
+    renderLowStock();
+
+    renderChart();
+
 }
 
 
-
-/* =========================================
-   SALE PRODUCT CHANGE
-========================================= */
+/* =====================================================
+   PRODUCT SELECT
+===================================================== */
 
 document
-    .getElementById("saleProduct")
+    .getElementById(
+        "saleProduct"
+    )
     .addEventListener(
         "change",
         function(){
@@ -2919,7 +4629,9 @@ document
                 d.products.find(
                     item =>
                         item.id ===
-                        Number(this.value)
+                        Number(
+                            this.value
+                        )
                 );
 
 
@@ -2936,14 +4648,16 @@ document
     );
 
 
-
-/* =========================================
+/* =====================================================
    START
-========================================= */
+===================================================== */
+
+updateDate();
 
 render();
 
 </script>
+
 
 </body>
 </html>
